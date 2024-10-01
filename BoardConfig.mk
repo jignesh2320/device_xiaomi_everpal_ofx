@@ -9,6 +9,7 @@ DEVICE_PATH := device/xiaomi/everpal
 # For building with minimal manifest
 ALLOW_MISSING_DEPENDENCIES := true
 
+
 # A/B
 AB_OTA_UPDATER := true
 
@@ -42,6 +43,9 @@ TARGET_2ND_CPU_ABI := armeabi-v7a
 TARGET_2ND_CPU_ABI2 := armeabi
 TARGET_2ND_CPU_VARIANT := generic
 TARGET_2ND_CPU_VARIANT_RUNTIME := cortex-a55
+
+ENABLE_CPUSETS := true
+ENABLE_SCHEDBOOST := true
 
 # Boot Image
 BOARD_KERNEL_CMDLINE := bootopt=64S3,32N2,64N2
@@ -120,6 +124,8 @@ RECOVERY_SDCARD_ON_DATA := true
 TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
+BOARD_HAS_LARGE_FILESYSTEM := true
+BOARD_SUPPRESS_SECURE_ERASE := true
 
 # Security Patch
 PLATFORM_SECURITY_PATCH := 2127-12-31
@@ -135,12 +141,15 @@ TW_INPUT_BLACKLIST := "hbtp_vm"
 TW_EXCLUDE_DEFAULT_USB_INIT := true
 TW_USE_TOOLBOX := true
 TW_INCLUDE_RESETPROP := true
+TW_INCLUDE_LIBRESETPROP :=true
+TW_INCLUDE_REPACKTOOLS := true
 TW_BRIGHTNESS_PATH := "/sys/class/leds/lcd-backlight/brightness"
 TW_DEFAULT_BRIGHTNESS := 1024
 TW_MAX_BRIGHTNESS := 2047
 TW_INCLUDE_NTFS_3G := true
 TARGET_USES_MKE2FS := true
 TW_INCLUDE_PYTHON := true
+TW_DEVICE_VERSION := Redmi_Note11T_5G
 
 # TWRP (Crypto)
 TW_INCLUDE_CRYPTO := true
@@ -157,6 +166,11 @@ TW_FRAMERATE := 90
 
 # This device does not support fastboot boot, do *NOT* remove!
 TW_NO_FASTBOOT_BOOT := true
+
+# Language
+TW_EXTRA_LANGUAGES := true
+TW_DEFAULT_LANGUAGE := en
+
 
 # Verified Boot
 BOARD_AVB_ENABLE := true
