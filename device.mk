@@ -50,6 +50,13 @@ PRODUCT_PACKAGES += \
     android.hardware.boot@1.2-impl \
     android.hardware.boot@1.2-impl.recovery
 
+PRODUCT_PACKAGES_DEBUG += \
+    bootctl
+
+# MTK PlPath Utils
+PRODUCT_PACKAGES += \
+    mtk_plpath_utils.recovery
+
 # Crypto
 PRODUCT_VENDOR_PROPERTIES += \
     ro.crypto.volume.filenames_mode=aes-256-cts
